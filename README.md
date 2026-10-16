@@ -4,13 +4,13 @@ Org-standard Terraform wrapper for **Virtual WAN** and **Virtual Hub**.
 
 ⚠️ **No AVM module exists for this resource** as of this writing. This wraps the native `azurerm_virtual_wan` / `azurerm_virtual_hub` resources directly, following the same conventions as the rest of this org's module set. Swap it for an AVM module if/when Microsoft publishes one.
 
-Deploys into an existing resource group -- this module does not create the resource group itself. Compose with [terraform-azure-naming](https://github.com/<org>/terraform-azure-naming) and [terraform-azure-tags](https://github.com/<org>/terraform-azure-tags).
+Deploys into an existing resource group -- this module does not create the resource group itself. Compose with [terraform-azure-naming](https://github.com/engryinker/terraform-azure-naming) and [terraform-azure-tags](https://github.com/engryinker/terraform-azure-tags).
 
 ## Usage
 
 ```hcl
 module "virtualwan" {
-  source = "git::https://github.com/<org>/terraform-azure-network-virtualwan.git?ref=v1.0.0"
+  source = "git::https://github.com/engryinker/terraform-azure-network-virtualwan.git?ref=v1.0.0"
 
   resource_group_name = azurerm_resource_group.this.name
   location             = azurerm_resource_group.this.location
